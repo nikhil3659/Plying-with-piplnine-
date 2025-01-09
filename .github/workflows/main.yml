@@ -42,4 +42,5 @@ jobs:
       - name: Build Docker image
         run: docker build -f Flask_Application/dockerfile -t my-flask-app:${{ github.sha }} .
       - name: Push Docker image
-        run: docker push my-flask-app:${{ github.sha }} 
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/my-flask-app:${{ github.sha }}
+ 
